@@ -48,7 +48,7 @@ final String json = mapping.serialize(address)
 ## Limitations
 
 It is impossible to deserialize (from XML or Json) immutable non annotated POJO. 
-Jackson could deserialize object only if it provides:
+Jackson could deserialize object only if object provides:
 
 - a default constructor, or
 - one of its constructors, have to be annotated using @JsonCreator
