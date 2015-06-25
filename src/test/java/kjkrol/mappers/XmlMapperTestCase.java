@@ -1,34 +1,28 @@
 package kjkrol.mappers;
 
-import kjkrol.mappers.sample.Address;
-import org.junit.Test;
-
-import java.io.InputStream;
-
-import static org.junit.Assert.assertEquals;
-
 /**
  * Test {@link ObjectMappers#XML_MAPPER}.
+ *
  * @author Karol Krol
  */
-public class XmlMapperTestCase extends ObjectMappingTestCase {
+public class XmlMapperTestCase extends AbstractMapperTestCase {
 
-    private static final String PATTERN_XML = "<Address xmlns=\"\"><city>Zabki</city><street>Orla</street><number>8</number></Address>";
+    private static final String XML_MSG = "<Address xmlns=\"\"><city>Zabki</city><street>Orla</street><number>8</number></Address>";
 
-    @Test
-    public void serializeToXmlTest() {
-        final ObjectMapping mapping = ObjectMappers.XML_MAPPER;
-        final String xml = mapping.serialize(PATTERN_ADDRESS)
-                .orElseThrow(() -> new AssertionError(CAN_NOT_SERIALIZE_TO + "XML"));
-        assertEquals(PATTERN_XML, xml);
+    private static final String XML = "XML";
+
+    @Override
+    public ObjectMapping getObjectMapping() {
+        return ObjectMappers.XML_MAPPER;
     }
 
-    @Test
-    public void deserializeFromXmlTest() {
-        final ObjectMapping mapping = ObjectMappers.XML_MAPPER;
-        final InputStream inputStream = convertsStringToInputStream(PATTERN_XML);
-        final Address address = mapping.deserialize(inputStream, Address.class)
-                .orElseThrow(() -> new AssertionError(CAN_NOT_DESERIALIZE_FROM + "XML"));
-        assertEquals(PATTERN_ADDRESS, address);
+    @Override
+    public String getExpectedPatternMessage() {
+        return XML_MSG;
+    }
+
+    @Override
+    public String getMessageType() {
+        return XML;
     }
 }

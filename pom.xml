@@ -8,26 +8,55 @@
     <artifactId>jackson-mappers-wrapper</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <developers>
+
+        <developer>
+            <id>kjkrol</id>
+            <name>Karol Krol</name>
+            <email>kjkrol@gmail.com</email>
+        </developer>
+
+    </developers>
+
     <properties>
+
         <java.version>1.8</java.version>
-        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <log4j.version>2.2</log4j.version>
+
+        <!-- dependencies versions -->
+        <log4j.version>2.3</log4j.version>
         <junit.version>4.12</junit.version>
-        <jackson-xml-databind.version>0.6.2</jackson-xml-databind.version>
-        <lombok.version>1.16.2</lombok.version>
+        <jackson.version>2.6.0-rc2</jackson.version>
+        <lombok.version>1.16.4</lombok.version>
+
+        <!-- plugins versions -->
+        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+
     </properties>
 
     <dependencies>
 
-        <!-- JACKSON (converting between Java objects and matching JSON/XML constructs) -->
+        <!-- JACKSON (converting between Java objects and (by default) matching JSON constructs) -->
+        <!-- XML support -->
         <dependency>
-            <groupId>com.fasterxml</groupId>
-            <artifactId>jackson-xml-databind</artifactId>
-            <version>${jackson-xml-databind.version}</version>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!-- YAML support -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!-- Extension module that adds support for JDK8 datatypes before core Jackson can support them -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-parameter-names</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <!-- - - - - - -->
 
-        <!-- LOMBOK -->
+        <!-- LOMBOK (Very spicy additions to the Java programming language)-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -36,7 +65,7 @@
         </dependency>
         <!-- - - - - - -->
 
-        <!-- LOGGING (use slf4j)-->
+        <!-- LOGGING (use slf4j provided by log4j v2)-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
@@ -69,9 +98,15 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <optimize>true</optimize>
+                    <compilerArgs>
+                        <!-- new Java 8 option to store formal parameter names of methods and constructors -->
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

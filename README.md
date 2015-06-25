@@ -47,7 +47,7 @@ final String json = mapping.serialize(address)
 
 ## Limitations
 
-It is impossible to deserialize (from XML or Json) immutable non annotated POJO. 
+It is impossible to deserialize (from XML or Json) immutable non annotated POJO.
 Jackson could deserialize object only if it provides:
 
 - a default constructor, or
@@ -55,6 +55,39 @@ Jackson could deserialize object only if it provides:
 
 It is because JVM bytecode does not contain names of method or constructor arguments, so this is the special case where actual name is required. 
 
+----
+
+***To broke that limitation*** code must be compiled with Java 8 compliant compiler with option to store formal 
+parameter names turned on (-parameters option).
+
+Compilation setup example:
+
+```xml
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+            <optimize>true</optimize>
+            <compilerArgs>
+                <!-- new Java 8 option to store formal parameter names of methods and constructors -->
+                <arg>-parameters</arg>
+            </compilerArgs>
+        </configuration>
+    </plugin>
+
+```
+
 ## References
 
 https://github.com/FasterXML/jackson-dataformat-xml
+https://github.com/FasterXML/jackson-dataformat-yaml
+https://github.com/FasterXML/jackson-module-parameter-names
+
+https://github.com/rzwitserloot/lombok
+

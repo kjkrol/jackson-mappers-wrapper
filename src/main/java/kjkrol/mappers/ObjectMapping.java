@@ -1,6 +1,6 @@
 package kjkrol.mappers;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +15,7 @@ import java.util.Optional;
  *
  * @author Karol Krol
  */
+@FunctionalInterface
 public interface ObjectMapping {
 
     Logger LOGGER = LoggerFactory.getLogger(ObjectMapping.class);
