@@ -1,4 +1,4 @@
-package map.sample;
+package kjkrol.mappers.sample;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package map;
+package kjkrol.mappers;
 
 import com.fasterxml.jackson.xml.XmlMapper;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -14,10 +14,10 @@ public class ObjectMappers {
     /**
      * Serialize/deserialize to/from matching JSON constructs
      */
-    public static final ObjectMapping JSON_MAPPING = () -> new ObjectMapper();
+    public static final ObjectMapping JSON_MAPPER = () -> new ObjectMapper();
 
     /**
      * Serialize/deserialize to/from matching XML constructs
      */
-    public static final ObjectMapping XML_MAPPING = () -> new XmlMapper();
+    public static final ObjectMapping XML_MAPPER = () -> new XmlMapper();
 }

@@ -1,4 +1,4 @@
-package map;
+package kjkrol.mappers;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
