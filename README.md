@@ -1,7 +1,7 @@
 # Overview
 
-Projects provides two wrappers on jackson mappers for converting between 
-Java objects (instances of JDK provided core classes, beans), and matching constructs (like JSON or XML). <br/>
+Projects provides wrappers on jackson mappers for converting between 
+Java objects (instances of JDK provided core classes, beans), and matching constructs (like JSON, XML or YAML). <br/>
 Those wrappers limit the set of functionality to two main methods:
 
   - serialize
@@ -55,7 +55,6 @@ Jackson could deserialize object only if it provides:
 
 It is because JVM bytecode does not contain names of method or constructor arguments, so this is the special case where actual name is required. 
 
-----
 
 ***To broke that limitation*** code must be compiled with Java 8 compliant compiler with option to store formal 
 parameter names turned on (-parameters option).
@@ -85,9 +84,8 @@ Compilation setup example:
 
 ## References
 
-https://github.com/FasterXML/jackson-dataformat-xml
-https://github.com/FasterXML/jackson-dataformat-yaml
-https://github.com/FasterXML/jackson-module-parameter-names
-
+https://github.com/FasterXML/jackson-dataformat-xml  
+https://github.com/FasterXML/jackson-dataformat-yaml  
+https://github.com/FasterXML/jackson-module-parameter-names  
 https://github.com/rzwitserloot/lombok
 
