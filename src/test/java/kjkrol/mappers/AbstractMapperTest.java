@@ -1,6 +1,6 @@
 package kjkrol.mappers;
 
-import kjkrol.mappers.sample.Address;
+import lombok.Value;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Karol Krol
  */
-public abstract class AbstractMapperTestCase {
+public abstract class AbstractMapperTest {
 
     private static final Address TESTED_OBJECT = new Address("Zabki", "Orla", 8);
     private static final String CAN_NOT_SERIALIZE_TO = "Can not serialize object to ";
@@ -46,5 +46,16 @@ public abstract class AbstractMapperTestCase {
         final byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
         return new ByteArrayInputStream(bytes);
     }
+
+}
+
+@Value
+class Address {
+
+    final private String city;
+
+    final private String street;
+
+    final private int number;
 
 }

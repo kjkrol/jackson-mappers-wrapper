@@ -5,7 +5,7 @@ package kjkrol.mappers;
  *
  * @author Karol Krol
  */
-public class YamlMapperTestCase extends AbstractMapperTestCase {
+public class YamlMapperTest extends AbstractMapperTest {
 
     private static final String YAML_MSG = "---\n" +
             "city: \"Zabki\"\n" +
@@ -23,7 +23,6 @@ public class YamlMapperTestCase extends AbstractMapperTestCase {
     public String getExpectedPatternMessage() {
         return YAML_MSG;
     }
-
 
     @Override
     public String getMessageType() {

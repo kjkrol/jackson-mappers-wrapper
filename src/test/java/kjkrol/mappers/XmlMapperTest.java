@@ -5,7 +5,7 @@ package kjkrol.mappers;
  *
  * @author Karol Krol
  */
-public class XmlMapperTestCase extends AbstractMapperTestCase {
+public class XmlMapperTest extends AbstractMapperTest {
 
     private static final String XML_MSG = "<Address xmlns=\"\"><city>Zabki</city><street>Orla</street><number>8</number></Address>";
 

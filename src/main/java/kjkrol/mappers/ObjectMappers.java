@@ -13,31 +13,23 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
  */
 public class ObjectMappers {
 
+    private static final ObjectMapper JSON_OBJECT_MAPPER = new ObjectMapper().registerModule(new ParameterNamesModule());
+    private static final ObjectMapper XML_OBJECT_MAPPER = new XmlMapper().registerModule(new ParameterNamesModule());
+    private static final ObjectMapper YAML_OBJECT_MAPPER = new YAMLMapper().registerModule(new ParameterNamesModule());
+
     /**
      * Serialize/deserialize to/from matching JSON constructs
      */
-    public static final ObjectMapping JSON_MAPPER = () -> {
-        final ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new ParameterNamesModule());
-        return objectMapper;
-    };
+    public static final ObjectMapping JSON_MAPPER = () -> JSON_OBJECT_MAPPER;
 
     /**
      * Serialize/deserialize to/from matching XML constructs
      */
-    public static final ObjectMapping XML_MAPPER = () -> {
-        final ObjectMapper objectMapper = new XmlMapper();
-        objectMapper.registerModule(new ParameterNamesModule());
-        return objectMapper;
-    };
+    public static final ObjectMapping XML_MAPPER = () -> XML_OBJECT_MAPPER;
 
     /**
      * Serialize/deserialize to/from matching YAML constructs
      */
-    public static final ObjectMapping YAML_MAPPER = () -> {
-        final ObjectMapper objectMapper = new YAMLMapper();
-        objectMapper.registerModule(new ParameterNamesModule());
-        return objectMapper;
-    };
+    public static final ObjectMapping YAML_MAPPER = () -> YAML_OBJECT_MAPPER;
 
 }

@@ -5,7 +5,7 @@ package kjkrol.mappers;
  *
  * @author Karol Krol
  */
-public class JsonMapperTestCase extends AbstractMapperTestCase {
+public class JsonMapperTest extends AbstractMapperTest {
 
     private static final String JSON_MSG = "{\"city\":\"Zabki\",\"street\":\"Orla\",\"number\":8}";
 

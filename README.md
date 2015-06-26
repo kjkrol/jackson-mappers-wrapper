@@ -1,15 +1,22 @@
 # Overview
 
-Projects provides wrappers on jackson mappers for converting between 
-Java objects (instances of JDK provided core classes, beans), and matching constructs (like JSON, XML or YAML). <br/>
+Projects provides wrappers over jackson mappers for converting between 
+Java objects (instances of JDK provided core classes, beans), and matching constructs like: JSON, XML or YAML. <br/>
 Those wrappers limit the set of functionality to two main methods:
 
   - serialize
   - deserialize
+
+If java 8 compiler "-parameters" option is turn on mappers-wrappers there is not need to use annotations for 
+Jackson Data Processor to enable deserialization.
  
 ## Building
 
 Project building process is configured and managed by Maven 3.x.
+
+## Code
+
+Lombok additions for the Java programming language is used!
 
 ## Example of usage
 
