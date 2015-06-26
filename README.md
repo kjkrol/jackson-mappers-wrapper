@@ -7,7 +7,7 @@ Those wrappers limit the set of functionality to two main methods:
   - serialize
   - deserialize
 
-If java 8 compiler "-parameters" option is turn on there is not need to use annotations for 
+If Java 8 compiler "-parameters" option is turn on there is not need to use annotations for 
 Jackson Data Processor to enable deserialization to POJO.
  
 ## Building
@@ -47,16 +47,16 @@ final String json = ObjectMappers.JSON_MAPPER.serialize(address)
                             .orElseThrow(() -> new Exception("Can not serialize object to JSON"));
 ```
 
-or serialize to the specific InputStream:
-
-```
-this.getObjectMapping().serialize(outputStream, address);
-```
-
 The result of serialization is a String object:
 
 ```json
 {"city":"Zabki","street":"Orla","number":8}
+```
+
+It is also option to serialize Java object to the specific OutputStream:
+
+```
+this.getObjectMapping().serialize(outputStream, address);
 ```
 
 - To ***`deserialize`*** it back to Java object:
