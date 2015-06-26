@@ -20,15 +20,22 @@ Lombok additions for the Java programming language is used!
 
 ## Example of usage
 
-Let consider class:
+Let consider the class:
+
+```java
+@Value
+class Address {
+
+    final private String city;
+
+    final private String street;
+
+    final private int number;
+}
 
 ```
 
-
-
-```
-
-To serialize object:
+To serialize its object:
 
 ```java
 
@@ -103,8 +110,8 @@ Compilation setup example:
 
 ## References
 
-https://github.com/FasterXML/jackson-dataformat-xml  
-https://github.com/FasterXML/jackson-dataformat-yaml  
-https://github.com/FasterXML/jackson-module-parameter-names  
-https://github.com/rzwitserloot/lombok
+[Extension for Jackson JSON processor that adds support for serializing POJOs as XML](https://github.com/FasterXML/jackson-dataformat-xml)  
+[Jackson module to add YAML backend](https://github.com/FasterXML/jackson-dataformat-yaml)  
+[Extension module that adds support for JDK8 datatypes before core Jackson can support them](https://github.com/FasterXML/jackson-module-parameter-names)
+[Lombok](https://github.com/rzwitserloot/lombok)
 
