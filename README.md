@@ -32,50 +32,39 @@ class Address {
 
     final private int number;
 }
-
 ```
 
 Initialize the `Address` object:
 
 ```java
-
 final Address address = new Address("City", "street", 1);
-
 ```
 
 - To ***`serialize`*** this object to JSON format:
 
 ```java
-
 final String json = ObjectMappers.JSON_MAPPER.serialize(address)
                             .orElseThrow(() -> new Exception("Can not serialize object to JSON"));
-
 ```
 
 or serialize to the specific InputStream:
 
 ```
-
-
-
+this.getObjectMapping().serialize(outputStream, address);
 ```
 
 The result of serialization is a String object:
 
 ```json
-
 {"city":"Zabki","street":"Orla","number":8}
-
 ```
 
 - To ***`deserialize`*** it back to Java object:
 
 
 ```java
-
 final Address address2 = ObjectMappers.JSON_MAPPER.deserialize(inputStream, Address.class)
-                .orElseThrow(() -> new Exception("Can not deserialize object from JSON"));
-                                               
+                .orElseThrow(() -> new Exception("Can not deserialize object from JSON"));                                        
 ```
 
 The same options are available for XML and YAML mappers.
