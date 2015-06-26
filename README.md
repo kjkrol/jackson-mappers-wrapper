@@ -35,7 +35,7 @@ class Address {
 
 ```
 
-To serialize its object:
+Initialize the `Address` object:
 
 ```java
 
@@ -43,7 +43,7 @@ final Address address = new Address("City", "street", 1);
 
 ```
 
-to JSon format use ***ObjectMappers.JSON_MAPPER*** serialize method:
+- To ***`serialize`*** this object to JSON format:
 
 ```java
 
@@ -51,7 +51,7 @@ final String json = ObjectMappers.JSON_MAPPER.serialize(address)
                             .orElseThrow(() -> new AssertionError("Can not serialize object to JSON"));
 ```
 
-The result of serialization is a message:
+The result of serialization is a String object:
 
 ```json
 
@@ -59,7 +59,7 @@ The result of serialization is a message:
 
 ```
 
-To deserialize it back to Java object use deserialize method:
+- To ***`deserialize`*** it back to Java object use deserialize method:
 
 
 ```
@@ -69,7 +69,7 @@ final Address address2 = ObjectMappers.JSON_MAPPER.deserialize(inputStream, Addr
                                   
 ```
 
-The same options are available for: ***ObjectMappers.XML_MAPPER*** and ***ObjectMappers.YAML_MAPPER***.
+The same options are available for XML and YAML mappers.
 
 ## Limitations
 
