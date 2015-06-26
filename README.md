@@ -54,7 +54,7 @@ final Address address2 = ObjectMappers.JSON_MAPPER.deserialize(inputStream, Addr
                                   
 ```
 
-The same option are available for ObjectMappers.XML_MAPPER and ObjectMappers.YAML_MAPPER.
+The same options are available for: ***ObjectMappers.XML_MAPPER*** and ***ObjectMappers.YAML_MAPPER***.
 
 ## Limitations
 
