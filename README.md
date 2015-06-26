@@ -110,8 +110,8 @@ Compilation setup example:
 
 ## References
 
-[Extension for Jackson JSON processor that adds support for serializing POJOs as XML](https://github.com/FasterXML/jackson-dataformat-xml)  
-[Jackson module to add YAML backend](https://github.com/FasterXML/jackson-dataformat-yaml)  
-[Extension module that adds support for JDK8 datatypes before core Jackson can support them](https://github.com/FasterXML/jackson-module-parameter-names)
-[Lombok](https://github.com/rzwitserloot/lombok)
+* [Extension for Jackson JSON processor that adds support for serializing POJOs as XML](https://github.com/FasterXML/jackson-dataformat-xml)  
+* [Jackson module to add YAML backend](https://github.com/FasterXML/jackson-dataformat-yaml)  
+* [Extension module that adds support for JDK8 datatypes before core Jackson can support them](https://github.com/FasterXML/jackson-module-parameter-names)
+* [Lombok](https://github.com/rzwitserloot/lombok)
 
