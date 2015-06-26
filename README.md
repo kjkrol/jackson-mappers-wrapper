@@ -20,6 +20,14 @@ Lombok additions for the Java programming language is used!
 
 ## Example of usage
 
+Let consider class:
+
+```
+
+
+
+```
+
 To serialize object:
 
 ```java
