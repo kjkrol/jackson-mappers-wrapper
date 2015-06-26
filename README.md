@@ -23,7 +23,7 @@ Lombok additions for the Java programming language is used!
 Let consider the class:
 
 ```java
-@Value
+@lombok.Value
 class Address {
 
     final private String city;

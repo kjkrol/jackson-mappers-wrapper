@@ -11,7 +11,7 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
  * @author Karol Krol
  * @see ObjectMapping
  */
-public class ObjectMappers {
+public final class ObjectMappers {
 
     private static final ObjectMapper JSON_OBJECT_MAPPER = new ObjectMapper().registerModule(new ParameterNamesModule());
     private static final ObjectMapper XML_OBJECT_MAPPER = new XmlMapper().registerModule(new ParameterNamesModule());
@@ -31,5 +31,10 @@ public class ObjectMappers {
      * Serialize/deserialize to/from matching YAML constructs
      */
     public static final ObjectMapping YAML_MAPPER = () -> YAML_OBJECT_MAPPER;
+
+
+    private ObjectMappers() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
+    }
 
 }
