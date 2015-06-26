@@ -20,7 +20,7 @@ Lombok additions for the Java programming language is used!
 
 ## Example of usage
 
-To serialize/deserialize object:
+To serialize object:
 
 ```java
 
@@ -28,29 +28,33 @@ final Address address = new Address("City", "street", 1);
 
 ```
 
-to JSon format use ***ObjectMappers.JSON_MAPPER***
+to JSon format use ***ObjectMappers.JSON_MAPPER*** serialize method:
 
 ```java
 
-final ObjectMapping mapping = ObjectMappers.JSON_MAPPER;  
-final String json = mapping.serialize(address)
+final String json = ObjectMappers.JSON_MAPPER.serialize(address)
                             .orElseThrow(() -> new AssertionError("Can not serialize object to JSON"));
-                            
-// and deserialize using a given InputStream
-final Address address2 = mapping.deserialize(inputStream, Address.class)
+```
+
+The result of serialization is a message:
+
+```json
+
+{"city":"Zabki","street":"Orla","number":8}
+
+```
+
+To deserialize it back to Java object use deserialize method:
+
+
+```
+
+final Address address2 = ObjectMappers.JSON_MAPPER.deserialize(inputStream, Address.class)
                 .orElseThrow(() -> new AssertionError("Can not deserialize object from JSON"));
                                   
 ```
 
-to XML format use ***ObjectMappers.XML_MAPPER***
-
-```java
-
-final ObjectMapping mapping = ObjectMappers.XML_MAPPER;  
-final String json = mapping.serialize(address)
-                            .orElseThrow(() -> new AssertionError("Can not serialize object to XML"));   
-                                                     
-```
+The same option are available for ObjectMappers.XML_MAPPER and ObjectMappers.YAML_MAPPER.
 
 ## Limitations
 
