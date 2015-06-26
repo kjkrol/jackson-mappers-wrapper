@@ -4,6 +4,7 @@ import lombok.Value;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
@@ -28,10 +29,21 @@ public abstract class AbstractMapperTest {
     protected abstract String getMessageType();
 
     @Test
-    public void serializeTest() {
+    public void serialize1Test() {
         final String message = this.getObjectMapping().serialize(TESTED_OBJECT)
                 .orElseThrow(() -> new AssertionError(CAN_NOT_SERIALIZE_TO + this.getMessageType()));
         assertEquals(this.getExpectedPatternMessage(), message);
+    }
+
+    @Test
+    public void serialize2Test() {
+        final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        if (this.getObjectMapping().serialize(outputStream, TESTED_OBJECT)) {
+            final String message = new String(outputStream.toByteArray(), StandardCharsets.UTF_8).intern();
+            assertEquals(this.getExpectedPatternMessage(), message);
+        } else {
+            throw new AssertionError(CAN_NOT_SERIALIZE_TO + this.getMessageType());
+        }
     }
 
     @Test

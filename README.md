@@ -48,7 +48,16 @@ final Address address = new Address("City", "street", 1);
 ```java
 
 final String json = ObjectMappers.JSON_MAPPER.serialize(address)
-                            .orElseThrow(() -> new AssertionError("Can not serialize object to JSON"));
+                            .orElseThrow(() -> new Exception("Can not serialize object to JSON"));
+
+```
+
+or serialize to the specific InputStream:
+
+```
+
+
+
 ```
 
 The result of serialization is a String object:
@@ -65,8 +74,8 @@ The result of serialization is a String object:
 ```java
 
 final Address address2 = ObjectMappers.JSON_MAPPER.deserialize(inputStream, Address.class)
-                .orElseThrow(() -> new AssertionError("Can not deserialize object from JSON"));
-                                  
+                .orElseThrow(() -> new Exception("Can not deserialize object from JSON"));
+                                               
 ```
 
 The same options are available for XML and YAML mappers.

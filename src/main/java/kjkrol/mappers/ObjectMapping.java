@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Optional;
 
 /**
@@ -29,6 +30,16 @@ public interface ObjectMapping {
             LOGGER.error(e.getMessage(), e);
         }
         return Optional.empty();
+    }
+
+    default boolean serialize(OutputStream outputStream, Object object) {
+        try {
+            this.getMapper().writeValue(outputStream, object);
+            return true;
+        } catch (IOException e) {
+            LOGGER.error(e.getMessage(), e);
+            return false;
+        }
     }
 
     default <V> Optional<V> deserialize(InputStream inputStream, Class<V> clazz) {
