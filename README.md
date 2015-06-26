@@ -59,10 +59,10 @@ The result of serialization is a String object:
 
 ```
 
-- To ***`deserialize`*** it back to Java object use deserialize method:
+- To ***`deserialize`*** it back to Java object:
 
 
-```
+```java
 
 final Address address2 = ObjectMappers.JSON_MAPPER.deserialize(inputStream, Address.class)
                 .orElseThrow(() -> new AssertionError("Can not deserialize object from JSON"));
