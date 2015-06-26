@@ -7,8 +7,8 @@ Those wrappers limit the set of functionality to two main methods:
   - serialize
   - deserialize
 
-If java 8 compiler "-parameters" option is turn on mappers-wrappers there is not need to use annotations for 
-Jackson Data Processor to enable deserialization.
+If java 8 compiler "-parameters" option is turn on there is not need to use annotations for 
+Jackson Data Processor to enable deserialization to POJO.
  
 ## Building
 
