@@ -1,6 +1,6 @@
 # Overview
 
-This project is kind of proof of concept wich shows that Java beans in Java8 could be serialized (transformed to XML/JSON/YAML etc.) as easily as case classes in Scala.
+This project is kind of proof of concept wich shows that Java beans in Java8 could be serialized (transformed to XML/JSON/YAML etc.) as easily as case classes in Scala.  
 Projects provides wrappers over jackson mappers for converting between 
 Java objects (instances of JDK provided core classes, beans), and matching constructs like: JSON, XML or YAML. <br/>
 Those wrappers limit the set of functionality to two main methods:
