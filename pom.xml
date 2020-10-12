@@ -24,7 +24,7 @@
 
         <!-- dependencies versions -->
         <log4j.version>2.3</log4j.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <jackson.version>2.6.0-rc2</jackson.version>
         <lombok.version>1.16.4</lombok.version>
 
